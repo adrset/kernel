@@ -180,11 +180,7 @@ static void reserve_debug_memory(void)
 
 void __init msm_8974_reserve(void)
 {
-#if defined(CONFIG_RAMDUMP_TAGS) || defined(CONFIG_CRASH_LAST_LOGS)
-	reserve_debug_memory();
-#endif
-<<<<<<< HEAD
-=======
+	
 #ifdef CONFIG_KEXEC_HARDBOOT
 	// Reserve space for hardboot page - just after ram_console,
 	// at the start of second memory bank
@@ -197,11 +193,15 @@ void __init msm_8974_reserve(void)
 	else
 		pr_err("Failed to reserve space for hardboot page at 0x%X!\n", start);
 #endif
+	
+#if defined(CONFIG_RAMDUMP_TAGS) || defined(CONFIG_CRASH_LAST_LOGS)
+	reserve_debug_memory();
+#endif
 
 #ifdef CONFIG_ANDROID_PERSISTENT_RAM
 	reserve_persistent_ram();
 #endif
->>>>>>> 8bfc74b... Implement kexec-hardboot
+
 	reserve_info = &msm8974_reserve_info;
 	of_scan_flat_dt(dt_scan_for_memory_reserve, msm8974_reserve_table);
 	msm_reserve();
