@@ -54,8 +54,6 @@ config FB_MSM_MDSS_HDMI_MHL_SII8620_8061
 	MHL (Mobile High-Definition Link) technology
         uses USB connector to output HDMI content
 
-<<<<<<< HEAD
-=======
 config MDSS_QUICKDRAW
 	select FB_QUICKDRAW
 	bool "MDSS quickdraw"
@@ -69,4 +67,3 @@ config FB_MSM_MDSS_KCAL_CTRL
 	---help---
 	  Enable sysfs for rgb/lut control for mdss-mdp display controllers
 	  in the MDSS sub-system.
->>>>>>> 05fe6eb... msm: mdss: Add KCAL support for post processing control [v2]
