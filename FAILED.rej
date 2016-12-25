@@ -1,0 +1,5 @@
+3.4.1
+3.4.2
+	FAIL
+		drivers/usb/host/xhci.h.rej
+		kernel/workqueue.c.rej
