@@ -1116,6 +1116,8 @@ int dpm_suspend_end(pm_message_t state)
 	if (error) {
 		dpm_resume_early(state);
 		return error;
+	
+	return 0; //added 3.4.8
 	}
 
 #ifdef CONFIG_PM_WAKEUP_TIMES
